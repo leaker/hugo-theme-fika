@@ -1,7 +1,7 @@
 <article class="post-expand post" itemprop="articleBody">
   <header class="article-info clearfix">
     <h1 itemprop="name">
-      <a href="{{ .Permalink }}" title="{{ .Title }}" itemprop="url">{{ .Title }}</a>
+      <a href="{{ .RelPermalink }}" title="{{ .Title }}" itemprop="url">{{ .Title }}</a>
     </h1>
     <p class="article-time">
       <time datetime="{{ .PublishDate }}" itemprop="datePublished"> {{ .PublishDate.Format "2006-01-02" }}</time>
@@ -15,13 +15,13 @@
       <div class="article-categories">
         <span></span>
         {{- range (.GetTerms "categories") }}
-          <a class="article-category-link" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+          <a class="article-category-link" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
         {{- end }}
       </div>
       <div class="article-tags">
         <span></span>
         {{- range (.GetTerms "tags") }}
-        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
         {{- end }}
       </div>
     </div>
