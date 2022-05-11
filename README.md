@@ -14,7 +14,7 @@ hugo new site quickstart -f yaml
 ```bash
 cd quickstart
 git init
-git submodule add https://github.com/leaker/fika-hugo-theme.git themes/fika
+git submodule add https://github.com/leaker/hugo-theme-fika.git themes/fika
 ```
 Then, add Fika theme to the site configuration:
 ```bash

@@ -3,9 +3,9 @@
 
 name: Fika
 license: MIT
-licenselink: https://github.com/leaker/fika-hugo-theme/blob/master/LICENSE
+licenselink: https://github.com/leaker/hugo-theme-fika/blob/master/LICENSE
 description: "Fika theme for Hugo"
-homepage: "https://github.com/leaker/fika-hugo-theme"
+homepage: "https://github.com/leaker/hugo-theme-fika"
 tags:
   - blog
 features: []
