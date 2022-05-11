@@ -1,0 +1,26 @@
+@function font-url($package, $filename) {
+  @return 'https://cdn.jsdelivr.net/npm/' + $package + '/fonts/' + $filename;
+}
+
+@font-face {
+  font-family: $font-custom-family;
+  font-weight: normal;
+  font-style: normal;
+  src: url("#{font-url($font-custom-package, $font-custom-filename + '.eot')}");
+  src: url("#{font-url($font-custom-package, $font-custom-filename + '.eot?#iefix')}") format('embedded-opentype'),
+    url("#{font-url($font-custom-package, $font-custom-filename + '.svg#'+ family)}") format('svg'),
+    url("#{font-url($font-custom-package, $font-custom-filename + '.woff')}") format('woff'),
+    url("#{font-url($font-custom-package, $font-custom-filename + '.ttf')}") format('truetype');
+}
+
+@font-face {
+  font-family: $font-icon-family;
+  font-style: normal;
+  font-weight: normal;
+  src: url(font-url($font-icon-package, $font-icon-filename + ".eot?v=#" +$font-icon-version));
+  src: url(font-url($font-icon-package, $font-icon-filename + ".eot?#iefix&v=#" +$font-icon-version)) format("embedded-opentype"),
+       url(font-url($font-icon-package, $font-icon-filename + ".woff?v=#" +$font-icon-version)) format("woff"),
+       url(font-url($font-icon-package, $font-icon-filename + ".ttf?v=#" +$font-icon-version)) format("truetype"),
+       url(font-url($font-icon-package, $font-icon-filename + ".svg#fontawesomeregular?v=#" +$font-icon-version)) format("svg");
+}
+

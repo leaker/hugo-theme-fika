@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{- partial "meta.html" . }}
+  <base href="{{ .Site.BaseURL }}">
+  <title>{{ .Site.Title }}</title>
+  <link rel="canonical" href="{{ .Permalink }}">
+  {{- with .OutputFormats.Get "rss" -}}
+  {{- printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{- end }}
+  {{- partial "head_includes.html" . }}
+</head>
+
+<body>
+  {{- partial "header.html" . }}
+  <div id="container">
+    <div id="main">
+      {{- range where .Paginator.Pages ".Params.hidden" "!=" true }}
+        {{- .Render "summary" }}
+      {{- end }}
+      {{- partial "pagination.html" . -}}
+    </div>
+    {{- partial "sidebar.html" . -}}
+  </div>
+{{- partial "footer.html" . }}

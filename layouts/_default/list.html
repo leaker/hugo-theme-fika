@@ -1,0 +1,6 @@
+{{- define "list" }}
+  {{- range where .Paginator.Pages ".Params.hidden" "!=" true }}
+    {{- .Render "summary" }}
+  {{- end }}
+  {{- partial "pagination.html" . -}}
+{{- end }}

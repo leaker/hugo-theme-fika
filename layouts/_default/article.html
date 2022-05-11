@@ -1,0 +1,61 @@
+<article class="post-expand post" itemprop="articleBody">
+  <header class="article-info clearfix">
+    <h1 itemprop="name">
+      <a href="{{ .Permalink }}" title="{{ .Title }}" itemprop="url">{{ .Title }}</a>
+    </h1>
+    <p class="article-time">
+      <time datetime="{{ .PublishDate }}" itemprop="datePublished"> {{ .PublishDate.Format "2006-01-02" }}</time>
+    </p>
+  </header>
+  <div class="article-content">
+    {{- $toc := true }}
+    {{- if isset .Params "toc" }}
+    {{- $toc = .Params.toc }}
+    {{- end }}
+    {{- if $toc }}
+    {{- if ne .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}
+    <div id="toc" class="toc-article">
+      <strong class="toc-title">文章目录</strong>
+      <ol class="toc">
+        {{ .TableOfContents }}
+      </ol>
+    </div>
+    {{- end }}
+    {{- end }}
+    {{ .Content }}
+  </div>
+  <footer class="article-footer clearfix">
+    <div class="article-catetags">
+      <div class="article-categories">
+        <span></span>
+        {{- range (.GetTerms "categories") }}
+        <a class="article-category-link" href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        {{- end }}
+      </div>
+      <div class="article-tags">
+        <span></span>
+        {{- range (.GetTerms "tags") }}
+        <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
+        {{- end }}
+      </div>
+    </div>
+  </footer>
+</article>
+<nav class="article-nav clearfix">
+  {{- if .Next }}
+  <div class="prev">
+    <a href="{{ .Next.Permalink }}" title="{{ .Next.LinkTitle }}">
+      <p><strong>上一篇</strong></p>
+      <span>{{ .Next.LinkTitle }}</span>
+    </a>
+  </div>
+  {{- end }}
+  {{- if .Prev }}
+  <div class="next">
+    <a href="{{ .Prev.Permalink }}" title="{{ .Prev.LinkTitle }}">
+      <p><strong>下一篇</strong></p>
+      <span>{{ .Prev.LinkTitle }}</span>
+    </a>
+  </div>
+  {{- end }}
+</nav>

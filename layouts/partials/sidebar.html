@@ -1,0 +1,28 @@
+<div id="asidepart">
+  <aside class="clearfix">
+    <div class="categorieslist">
+      <p class="asidetitle">文章分类</p>
+      <ul>
+        {{- range $categorie_name, $categorie := .Site.Taxonomies.categories }}
+        <li>
+          <span class="count">{{ $categorie.Count }}</span>
+          <a href="/categories/{{ $categorie_name | urlize }}.html" title="{{ $categorie_name }}">{{ $categorie_name }}</a>
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+    <div class="tagslist">
+      <p class="asidetitle">文章标签</p>
+        <ul class="clearfix">
+          {{- range $tag_name, $tag := .Site.Taxonomies.tags }}
+          {{- if gt $tag.Count 1 }}
+          <li><a href="/tags/{{ $tag_name | urlize }}.html" title="{{ $tag_name }}">{{ $tag_name }}<sup>{{ $tag.Count }}</sup></a></li>
+          {{- end }}
+          {{- end }}
+        </ul>
+    </div>
+    <div class="rsspart">
+      <a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+    </div>
+  </aside>
+</div>

@@ -1,0 +1,26 @@
+  <footer>
+    <div id="footer">
+      <div class="line">
+        <span></span>
+        <div class="author"></div>
+      </div>
+      <section class="info">
+        <p> Hello, this is leaker&#39;s blog in github. <br />
+          Leaker: &#34;Living without an aim is like sailing without a compass.&#34;</p>
+      </section>
+
+      <div class="social-font" class="clearfix">
+        <a href="mailto:admin@leelib.com" target="_blank" class="icon-email" title="Email Me"></a>
+      </div>
+      <p class="copyright">
+        Powered by <a rel="noopener" title="Hugo" href="https://gohugo.io" target="_blank">Hugo</a> and Theme by <a rel="noopener" title="Fika" href="https://github.com/leaker/hugo-theme-fika" target="_blank">Fika</a> © 2022
+        <a href="/about/index.html" target="_blank" title="leaker">leaker</a>
+        {{- if isset .Site.Params "cn_icp_id" }}
+        <a target="_blank" rel="noopener noreferrer" href="http://www.beian.miit.gov.cn/" class="report-link"><img rel="nofollow" title="备案号： {{ $.Site.Params.cn_icp_id }}" class="report-img" src="/images/report-img.webp"><span class="report-link-text">{{ $.Site.Params.cn_icp_id }}</span></a>
+        {{- end}}
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

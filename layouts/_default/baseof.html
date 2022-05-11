@@ -1,0 +1,9 @@
+{{- partial "head.html" . -}}
+{{- partial "header.html" . -}}
+<div id="container">
+    <div id="main">
+    {{- block "list" . }}{{- end }}
+    </div>
+    {{- partial "sidebar.html" . -}}
+</div>
+{{- partial "footer.html" . -}}
