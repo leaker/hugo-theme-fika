@@ -1,5 +1,5 @@
-# fika-hugo-theme
-Fika theme for Hugo
+# Fika theme for Hugo
+Fika is a Hugo theme designed for bloggers
 
 ## Installation
 ### Step 1: Install Hugo with extended (Windows)
