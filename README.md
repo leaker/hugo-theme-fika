@@ -18,12 +18,14 @@ git submodule add https://github.com/leaker/fika-hugo-theme.git themes/fika
 ```
 Then, add Fika theme to the site configuration:
 ```bash
-echo theme: \"fika\" >> config.yaml
+echo theme: fika >> config.yaml
 ```
 
 ## Configurations
 In site configuration file: `config.yaml`
 ```yaml config.yaml
+theme: fika # Use Fika theme
+
 params:
   sub_title: # sub title for header
   logo: /image/logo.webp # header logo image. path to: /static/image/logo.webp
