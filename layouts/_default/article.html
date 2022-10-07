@@ -1,12 +1,5 @@
 <article class="post-expand post" itemprop="articleBody">
-  <header class="article-info clearfix">
-    <h1 itemprop="name">
-      <a href="{{ .RelPermalink }}" title="{{ .Title }}" itemprop="url">{{ .Title }}</a>
-    </h1>
-    <p class="article-time">
-      <time datetime="{{ .PublishDate }}" itemprop="datePublished"> {{ .PublishDate.Format "2006-01-02" }}</time>
-    </p>
-  </header>
+  {{- partial "article_header.html" . -}}
   <div class="article-content">
     {{- $toc := true }}
     {{- if isset .Params "toc" }}

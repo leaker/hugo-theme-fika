@@ -1,14 +1,14 @@
 //Color
-$color-theme: #2d2d2d;
-$color-background: #ddd;
-$color-font: #817C7C;
-$color-content: #413F3F;
+$color-theme: #161b22;
+$color-background: #0d1117;
+$color-font: #c9d1d9;
+$color-content: #c9d1d9;
 $color-white: #ffffff;
-$color-blue: #2ca6cb;
+$color-blue: #58a6ff;
 $color-orange: #ea6753;
 $color-font-nav: #E9CD4C;
 $color-section: #fafafa;
-$color-footer: #1f1f1f;
+$color-footer: $color-theme;
 $color-gray: #676767;
 $color-meta: #808080;
 $color-heading: #333333;
@@ -21,7 +21,27 @@ $color-google: #dd4b39;
 $color-qrcode: #49ae0f;
 $color-renren: #369;
 $color-top: #762c54;
-$color-border: #dbdbdb;
+$color-border: #30363d;
+$color-subtle: #161b22;
+$color-border-muted: #21262d;
+$color-icon-directory: #8b949e;
+$color-fg-default: #58a6ff;
+$color-fg-muted: #8b949e;
+$color-canvas-inset: #010409;
+
+$color-btn-text: #c9d1d9;
+$color-btn-bg: #21262d;
+$color-btn-border: rgba(240,246,252,0.1);
+$color-btn-shadow: 0 0 transparent;
+$color-btn-inset-shadow: 0 0 transparent;
+$color-btn-hover-bg: #30363d;
+$color-btn-hover-border: #8b949e;
+$color-btn-active-bg: hsla(212,12%,18%,1);
+$color-btn-active-border: #6e7681;
+$color-btn-selected-bg: #161b22;
+$color-btn-focus-bg: #21262d;
+$color-btn-focus-border: #8b949e;
+$color-btn-focus-shadow: 0 0 0 3px;
 
 //Media
 $width-phone: 568px;
@@ -57,14 +77,8 @@ $font-icon-filename: "fontawesome-webfont";
 $font-icon-version: "4.7.0";
 // $show_custom_font: hexo-config("show_custom_font");
 $show_custom_font: true; // TODO: remove this
-$font-size: 100%;
+$font-size: 14px;
 $line-height: 1.5;
 
 //image
 $author-img: "/img/author.webp";
-
-//comment
-// $duoshuo: hexo-config("duoshuo_shortname");
-
-//banner image
-// $banner-img: hexo-config("banner_img");

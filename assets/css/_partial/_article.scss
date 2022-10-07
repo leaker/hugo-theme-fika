@@ -1,5 +1,5 @@
 .post,.page,.link,.photo {
-  background: $color-section;
+  // background: $color-section;
   a {
     color: $color-blue;
     &:hover {
@@ -15,16 +15,18 @@ article {
     }
     &>h1 {
       padding: 0.2em 3%;
-      font-size: $font-size+70;
+      // font-size: $font-size+70;
+        font-size: $font-size*1.7;
       line-height: $line-height;
       @media ($tablet) {
-        font-size: $font-size+100;
+        // font-size: $font-size+100;
+        font-size: $font-size*2;
         padding-top: 0.3em;
       }
       word-wrap: break-word;
       word-break: normal;
       // font-smoothing: antialiased;
-      border-left: 5px solid $color-theme;
+      border-left: 5px solid $color-fg-default;
     }
     &>p.article-author {
       padding: 0.3em 4% 0.3em 0;
@@ -40,6 +42,7 @@ article {
       font-size: 0.8em;
       text-align: center;
       margin-bottom: -2.7em;
+      color: $color-fg-muted;
       @media ($mini) {
         float: right;
         margin-right: 1em;
@@ -66,6 +69,12 @@ article {
     pre,code {
       font-family: $font-mono;
       overflow-x: auto;
+      // padding-left: 0.25em;
+    }
+    pre {
+      padding: 0 0.25em;
+      border-radius: 6px;
+      background-color: $color-canvas-inset !important;
     }
     .kb {
       padding: .1em .6em;
@@ -81,22 +90,25 @@ article {
       white-space: nowrap;
     }
     h1,h2 {
-      font-size: $font-size+80;
+      // font-size: $font-size+80;
+      font-size: $font-size*1.8;
       line-height: 1.2em;
       padding-bottom: 0.3em;
       margin-top: 1.5em;
       border-bottom: 2px solid $color-border;
     }
     h3 {
-      font-size: $font-size+40;
+      // font-size: $font-size+40;
+      font-size: $font-size*1.4;
       line-height: 1em;
       margin-top: 1.3em;
     }
     h4,h5,h6 {
-      font-size: $font-size+40;
+      // font-size: $font-size+40;
+      font-size: $font-size*1.4;
     }
     h1,h2,h3,h3,h4,h5,h6 {
-      color: $color-heading;
+      // color: $color-heading;
       // font-smoothing: antialiased
       &>code {
         color: darken($color-gray,20%);
@@ -143,7 +155,8 @@ article {
     }
     ul li {
       list-style: disc;
-      text-align: match-parent;
+      // text-align: -webkit-match-parent;
+      // text-align: match-parent;
     }
     ol li {
       list-style-type: decimal;

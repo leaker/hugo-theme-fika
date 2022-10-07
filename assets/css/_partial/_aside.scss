@@ -42,28 +42,34 @@
 
 //sidebar
 #asidepart {
-  background: $color-section;
   margin: 1em 0 0;
-  padding: 0.5em 2% 1em;
+  // padding: 0.5em 1em 1em;
+  border-style: solid;
   @media ($tablet) {
     position: relative;
     float: left;
-    width: 18%;
-    margin: 2em 0 0 3%;
+    width: 294px;
+    margin: 2em 0 0 1em;
   }
   .count {
     float: right;
-    padding: 0.5em 0%;
+    // padding: 0.5em 0%;
     color: lighten($color-gray, 30%);
   }
 }
 
+aside {
+  @include box();
+  margin-bottom: 1em;
+}
+
 .asidetitle {
-  font-size: 1.1em;
-  color: $color-blue;
-  padding: 0 0 0.3125em 0;
-  border-bottom: 0.1875em solid $color-gray;
-  font-weight: 600;
+  @include box-header();
+  // font-size: 1.1em;
+  // color: $color-blue;
+  // padding: 0 0 0.3125em 0;
+  // border-bottom: 0.1875em solid $color-gray;
+  // font-weight: 600;
   a {
     color: $color-blue;
     font-weight: 600;
@@ -76,24 +82,26 @@
 
 //categories
 .categorieslist {
+  width: 100%;
   @media ($mini) {
-    width: 45%;
+    // width: 45%;
     float: left;
-    margin: 0 5% 0 0;
+    // margin: 0 5% 0 0;
   }
   @media ($tablet) {
-    width: 100%;
     float: none;
-    margin: 1em 0 0;
+    // margin: 1em 0 0;
   }
   li {
-    border-bottom: 1px solid $color-gray;
+    // border-bottom: 1px solid $color-gray;
+    @include box-row();
     a {
-      display: block;
-      padding: 0.5em 0%;
-      font-weight: 600;
+      // display: block;
+      // padding: 0.5em 0%;
+      font-weight: 500;
       &:hover {
-        color: $color-theme;
+        color: $color-fg-default;
+        text-decoration: underline;
       }
     }
   }
@@ -101,16 +109,16 @@
 
 //tag
 .tagslist {
-  margin: 1em 0 0;
+  // margin: 1em 0 0;
+    width: 100%;
   @media ($mini) {
-    width: 45%;
+    // width: 45%;
     float: left;
-    margin: 0 5% 0 0;
+    // margin: 0 5% 0 0;
   }
   @media ($tablet) {
-    width: 100%;
     float: none;
-    margin: 1em 0 0;
+    // margin: 1em 0 0;
   }
   ul {
     padding: 0.5em 0;
@@ -121,10 +129,14 @@
       display: block;
       margin: 0.3125em;
       padding: 0.125em 0.3125em;
-      background: lighten($color-gray, 50%);
+      @include box();
+      // background: lighten($color-gray, 50%);
       &:hover {
-        color: $color-theme;
-        background: lighten($color-gray, 30%);
+        color: $color-fg-default;
+        // background: lighten($color-gray, 30%);
+      }
+      sup {
+        color: $color-fg-muted;
       }
     }
   }
@@ -132,7 +144,7 @@
 
 //rss
 .rsspart {
-  background: $color-theme;
+  // background: $color-theme;
   width: 100%;
   @media ($mini) {
     float: left;
@@ -145,14 +157,9 @@
     margin: 1em 0 0;
   }
   a {
-    color: $color-white;
     display: block;
     padding: 0.625em 0;
     text-align: center;
-    &:hover {
-      color: $color-theme;
-      background: $color-section;
-    }
     &::before {
       font-family: $font-icon-family;
       @include font-smoothing();
@@ -326,12 +333,14 @@
     list-style: none !important;
     padding: 0.2em 0em;
     display: list-item;
-    text-align: match-parent;
+    // text-align: match-parent;
+    // text-align: -webkit-center;
+    // text-align: start;
     font-weight: 600;
   }
 
   time {
     float: right;
-    color: lighten($color-gray, 30%);
+    color: $color-fg-muted;
   }
 }

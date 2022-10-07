@@ -1,5 +1,5 @@
 footer.article-footer {
-  background: $color-section;
+  // background: $color-section;
   padding: 0 4%;
   margin: 0;
   border-top: 1px solid $color-border;
@@ -193,10 +193,11 @@ footer.article-footer {
     float: left;
     padding: 0 0.3em;
     margin: 0.3em;
-    background: lighten($color-gray,50%);
+    // background: lighten($color-gray,50%);
     &:hover {
-      color: $color-white;
-      background: $color-blue;
+      // color: $color-white;
+      // background: $color-blue;
+      text-decoration: underline;
     }
   }
 }
@@ -308,18 +309,20 @@ section.comment {
 
 //toc
 .toc-article {
-  background: $color-code;
+  // background: $color-code;
   margin: 1.6em 0 0 0;
   padding: 1em;
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  border: 1px solid #ddd;
+  border: 1px solid $color-border-muted;
   strong {
-    padding: 0.3em 0;
+    padding: 0.4em;
+    font-size: $font-size+1;
   }
   ul li {
     list-style: disc;
-    text-align: match-parent;
+    // text-align: match-parent;
+    // text-align: -webkit-center;
     margin: 0.5em 0;
   }
   ol li {

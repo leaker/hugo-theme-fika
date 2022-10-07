@@ -22,11 +22,11 @@ footer {
       display: block;
       width: 0.5em;
       height: 6.25em;
-      border-right: 0.125em solid $color-white;
+      border-right: 0.125em solid $color-background;
       margin: 0 auto;
       @media ($mini) {
         position: absolute;
-        left: 3em;
+        left: 2.6em;
         margin: 0 0 1.5em;
       }
     }
@@ -93,7 +93,8 @@ footer {
     display: block;
     width: 14%;
     color: $color-white;
-    font-size: $font-size+85;
+    // font-size: $font-size+85;
+    font-size: $font-size*1.85;
     padding: 0.5em;
     @media ($tablet) {
       padding: 0.3em;

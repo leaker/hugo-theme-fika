@@ -2,7 +2,7 @@
 #container {
   -webkit-flex: 1;
   flex: 1;
-  width: 95%;
+  width: 96%;
   margin: 0 auto;
   overflow: hidden;
 
@@ -11,11 +11,13 @@
   }
 
   @media ($tablet) {
-    width: 94%;
+    // width: 94%;
+    width: 96%;
   }
 
   @media ($desktop) {
     width: 82%;
+    // width: 96%;
   }
 }
 
@@ -25,7 +27,8 @@
 
   @media ($tablet) {
     margin: 2em 0 0;
-    width: 75%;
+    // width: 75%;
+    width: calc(100% - 308px);
     float: left;
     transition: margin 0.5s ease-out;
   }
@@ -68,7 +71,8 @@
   }
 
   article.post-expand {
-    background: $color-section;
+    // background: $color-section;
+    @include box();
     margin-bottom: 3.5em;
 
     //-webkit-box-shadow: 2px 2px 3px darken(color-background,20%)
@@ -152,10 +156,10 @@
 }
 
 #page-nav {
-  background: $color-section;
+  // background: $color-section;
   text-align: center;
   overflow: hidden;
-
+  @include box();
   a {
     display: inline-block;
     padding: 0.5em 1em;
@@ -280,7 +284,8 @@
   h2 {
     width: 90%;
     color: $color-blue;
-    font-size: $font-size+20;
+    // font-size: $font-size+20;
+    font-size: $font-size*1.2;
   }
 
   a {

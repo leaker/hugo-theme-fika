@@ -1,28 +1,33 @@
 <div id="asidepart">
   <aside class="clearfix">
+    <p class="asidetitle">文章分类</p>
     <div class="categorieslist">
-      <p class="asidetitle">文章分类</p>
       <ul>
         {{- range $categorie_name, $categorie := .Site.Taxonomies.categories }}
         <li>
           <span class="count">{{ $categorie.Count }}</span>
+          <svg aria-label="Directory" aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon mr-3">
+            <path d="M1.75 1A1.75 1.75 0 000 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0016 13.25v-8.5A1.75 1.75 0 0014.25 3H7.5a.25.25 0 01-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75z"></path>
+          </svg>
           <a href="/categories/{{ $categorie_name | urlize }}.html" title="{{ $categorie_name }}">{{ $categorie_name }}</a>
         </li>
         {{- end }}
       </ul>
     </div>
+  </aside>
+  <aside class="clearfix">
+    <p class="asidetitle">文章标签</p>
     <div class="tagslist">
-      <p class="asidetitle">文章标签</p>
-        <ul class="clearfix">
-          {{- range $tag_name, $tag := .Site.Taxonomies.tags }}
-          {{- if gt $tag.Count 1 }}
-          <li><a href="/tags/{{ $tag_name | urlize }}.html" title="{{ $tag_name }}">{{ $tag_name }}<sup>{{ $tag.Count }}</sup></a></li>
-          {{- end }}
-          {{- end }}
-        </ul>
-    </div>
-    <div class="rsspart">
-      <a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+      <ul class="clearfix">
+        {{- range $tag_name, $tag := .Site.Taxonomies.tags }}
+        {{- if gt $tag.Count 1 }}
+        <li><a href="/tags/{{ $tag_name | urlize }}.html" title="{{ $tag_name }}">{{ $tag_name }}<sup>{{ $tag.Count }}</sup></a></li>
+        {{- end }}
+        {{- end }}
+      </ul>
     </div>
   </aside>
+  <div class="rsspart">
+    <a href="/atom.xml" class="btn" target="_blank" title="rss">RSS 订阅</a>
+  </div>
 </div>

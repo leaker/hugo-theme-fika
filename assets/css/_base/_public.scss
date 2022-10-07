@@ -16,6 +16,7 @@
 
 @mixin clearfix {
   zoom: 1;
+
   &:before,
   &:after {
     content: "";
@@ -208,4 +209,73 @@ input[type="search"]::-webkit-search-decoration {
 
 .fadeOut {
   animation-name: fadeOut;
+}
+
+
+@mixin box() {
+  // background-color: var(--color-canvas-default);
+  border-color: $color-border;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+}
+
+@mixin box-header() {
+  padding: 16px;
+  margin: -1px -1px 0;
+  background-color: $color-subtle;
+  border-color: $color-border;
+  border-style: solid;
+  border-width: 1px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+@mixin box-row() {
+  padding: 8px 14px;
+  margin-top: -1px;
+  list-style-type: none;
+  border-top-color: $color-border-muted;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+
+.octicon {
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+.mr-3 {
+  margin-right: 12px !important;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 5px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  border: 1px solid;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+
+  color: $color-btn-text;
+  background-color: $color-btn-bg;
+  border-color: $color-btn-border;
+  box-shadow: $color-btn-shadow, $color-btn-inset-shadow;
+  transition: 80ms cubic-bezier(0.33, 1, 0.68, 1);
+  transition-property: color, background-color, box-shadow, border-color;
+  &:hover {
+    background-color: $color-btn-hover-bg;
+    border-color: $color-btn-hover-border;
+  }
 }
