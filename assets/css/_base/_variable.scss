@@ -1,4 +1,4 @@
-//Color
+// Color
 $color-theme: #161b22;
 $color-background: #0d1117;
 $color-font: #c9d1d9;
@@ -28,6 +28,7 @@ $color-icon-directory: #8b949e;
 $color-fg-default: #58a6ff;
 $color-fg-muted: #8b949e;
 $color-canvas-inset: #010409;
+$color-primer: #f78166;
 
 $color-btn-text: #c9d1d9;
 $color-btn-bg: #21262d;
@@ -43,7 +44,7 @@ $color-btn-focus-bg: #21262d;
 $color-btn-focus-border: #8b949e;
 $color-btn-focus-shadow: 0 0 0 3px;
 
-//Media
+// Media
 $width-phone: 568px;
 $width-mini: 768px;
 $width-tablet: 1024px;
@@ -61,7 +62,7 @@ $desktop: "min-width: " + $width-desktop;
 $phonemax: "max-width: " + $width-phone;
 $tabletmax: "max-width: " + $width-tablet;
 
-//Font
+// Font
 $font-default: "Helvetica Neue", "Helvetica", "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, sans-serif;
 $font-serif: "Georgia", serif;
 $font-mono: Monaco, Menlo, Consolas, "Courier New", monospace;
@@ -80,5 +81,5 @@ $show_custom_font: true; // TODO: remove this
 $font-size: 14px;
 $line-height: 1.5;
 
-//image
+// image
 $author-img: "/img/author.webp";
