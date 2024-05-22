@@ -29,7 +29,7 @@ theme: fika # Use Fika theme
 params:
   sub_title: # sub title for header
   logo: /image/logo.webp # header logo image. path to: /static/image/logo.webp
-  cn_icp_id: # China Website Internet Content Provider ID. If site not deploy in china, keep empty
+  cn_icp_id: # China Website Internet Content Provider ID. If site not deploy in china, delete this line
 
 # header menu items
 menu:
