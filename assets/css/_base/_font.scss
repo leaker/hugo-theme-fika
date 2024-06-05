@@ -11,6 +11,7 @@
     url("#{font-url($font-custom-package, $font-custom-filename + '.svg#'+ family)}") format('svg'),
     url("#{font-url($font-custom-package, $font-custom-filename + '.woff')}") format('woff'),
     url("#{font-url($font-custom-package, $font-custom-filename + '.ttf')}") format('truetype');
+  font-display: swap;
 }
 
 @font-face {
@@ -22,5 +23,6 @@
        url(font-url($font-icon-package, $font-icon-filename + ".woff?v=#" +$font-icon-version)) format("woff"),
        url(font-url($font-icon-package, $font-icon-filename + ".ttf?v=#" +$font-icon-version)) format("truetype"),
        url(font-url($font-icon-package, $font-icon-filename + ".svg#fontawesomeregular?v=#" +$font-icon-version)) format("svg");
+  font-display: swap;
 }
 

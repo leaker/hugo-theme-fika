@@ -54,13 +54,14 @@ body {
 
 #textlogo {
   float: left;
-  width: 420px;
-  @media ($phone) {
-    width: 300px;
-  }
-  @media ($mini) {
-    width: 420px;
-  }
+  // width: 300px;
+  white-space: nowrap;
+  // @media ($phone) {
+  //   width: 300px;
+  // }
+  // @media ($mini) {
+  //   width: 420px;
+  // }
   margin-left: 0.5em;
   h1.site-name {
     width: 86%;
@@ -99,6 +100,7 @@ body {
   h2.blog-motto {
     font-size: 0.7em;
     font-weight: normal;
+    color: $color-fg-muted;
     @media ($mini) {
       font-size: $font-size;
     }
@@ -149,6 +151,7 @@ header nav {
   min-height: $max-height;
   transition: $max-height 1s ease-out;
   ul {
+    display: flex;
     @media ($tablet) {
       float: right;
     }
@@ -160,12 +163,17 @@ header nav {
   }
   ul li a {
     padding: 0.2em 0 0.2em 1em;
+    font-weight: 600;
+    letter-spacing: .1em;
+    font-size: 1.4em;
     @media ($tablet) {
       padding: 0.2em 1.5em;
+      font-size: 1.52em;
     }
+    color: $color-blue;
     &:hover {
-      background: saturate(darken($color-theme, 25%), 10%);
-      color: $color-font-nav;
+      color: $color-orange;
+    //   background: saturate(darken($color-theme, 25%), 10%);
     }
   }
 }
@@ -178,6 +186,7 @@ header nav {
   padding: 0.1em 0 0 1em;
   input {
     -webkit-appearance: textfield;
+    appearance: textfield;
     font-size: 0.87em;
     line-height: $line-height+0.2;
     border: 1px solid $color-white;

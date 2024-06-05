@@ -42,9 +42,9 @@ article {
     }
     & > p.article-time {
       padding-top: .5em;
-      font-size: 0.8em;
+      // font-size: 0.8em;
       text-align: center;
-      margin-right: .5em;
+      margin-right: 1em;
       margin-bottom: -2.7em;
       color: $color-fg-muted;
       @media ($mini) {
