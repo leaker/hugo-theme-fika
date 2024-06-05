@@ -41,16 +41,15 @@ article {
       }
     }
     & > p.article-time {
-      padding-top: 0.5em;
+      padding-top: .5em;
       font-size: 0.8em;
       text-align: center;
+      margin-right: .5em;
       margin-bottom: -2.7em;
       color: $color-fg-muted;
       @media ($mini) {
         float: right;
-        margin-right: 1em;
         padding-top: 0.1em;
-        font-size: 0.9em;
       }
       &:before {
         font-family: $font-icon-family;
