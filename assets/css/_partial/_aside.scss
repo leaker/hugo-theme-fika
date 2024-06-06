@@ -155,13 +155,12 @@ aside {
   width: 100%;
   @media ($mini) {
     float: left;
-    width: 45%;
-    margin: 0 5% 0 0;
+    // width: 45%;
+    // margin: 0 5% 0 0;
   }
   @media ($tablet) {
-    width: 100%;
     float: none;
-    margin: 1em 0 0;
+    // margin: 1em 0 0;
   }
   a {
     display: block;
