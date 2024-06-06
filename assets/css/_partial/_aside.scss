@@ -75,7 +75,7 @@ aside {
     font-weight: 600;
     &:hover {
       color: $color-theme;
-      transition: $color-blue .5s;
+      transition: $color-blue 0.5s;
     }
   }
 }
@@ -95,6 +95,13 @@ aside {
   li {
     // border-bottom: 1px solid $color-gray;
     @include box-row();
+    .title {
+      &:before {
+        font-family: $font-icon-family;
+        content: "\f07b";
+        margin-right: 0.5em;
+      }
+    }
     a {
       // display: block;
       // padding: 0.5em 0%;
@@ -110,7 +117,7 @@ aside {
 //tag
 .tagslist {
   // margin: 1em 0 0;
-    width: 100%;
+  width: 100%;
   @media ($mini) {
     // width: 45%;
     float: left;
@@ -184,7 +191,7 @@ aside {
       padding: 0.5em;
       &:hover {
         color: $color-theme;
-        transition: $color-theme .25s;
+        transition: $color-theme 0.25s;
       }
     }
   }
@@ -234,7 +241,7 @@ aside {
       float: left;
       &:hover {
         color: $color-theme;
-        transition: $color-theme .25s;
+        transition: $color-theme 0.25s;
       }
     }
   }
@@ -262,7 +269,7 @@ aside {
       padding: 0 3%;
       &:hover {
         color: $color-theme;
-        transition: $color-theme .25s;
+        transition: $color-theme 0.25s;
       }
     }
   }

@@ -41,20 +41,23 @@ article {
       }
     }
     & > p.article-time {
-      padding-top: .5em;
+      // padding-top: .5em;
       // font-size: 0.8em;
       text-align: center;
-      margin-right: 1em;
+      margin-right: 1.5em;
       margin-bottom: -2.7em;
       color: $color-fg-muted;
-      @media ($mini) {
-        float: right;
-        padding-top: 0.1em;
-      }
+      float: right;
+      padding-top: 0.1em;
+      // @media ($mini) {
+      //   float: right;
+      //   padding-top: 0.1em;
+      // }
       &:before {
         font-family: $font-icon-family;
         font-size: $font-size;
         content: "\f017";
+        margin-right: 0.5em;
         @include font-smoothing();
       }
     }
