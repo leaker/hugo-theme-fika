@@ -28,7 +28,6 @@ article {
       }
       word-wrap: break-word;
       word-break: normal;
-      // font-smoothing: antialiased;
       border-left: 5px solid $color-fg-default;
     }
     & > p.article-author {
@@ -41,18 +40,12 @@ article {
       }
     }
     & > p.article-time {
-      // padding-top: .5em;
-      // font-size: 0.8em;
       text-align: center;
       margin-right: 1.5em;
       margin-bottom: -2.7em;
       color: $color-fg-muted;
       float: right;
       padding-top: 0.1em;
-      // @media ($mini) {
-      //   float: right;
-      //   padding-top: 0.1em;
-      // }
       &:before {
         font-family: $font-icon-family;
         font-size: $font-size;
@@ -76,7 +69,6 @@ article {
     code {
       font-family: $font-mono;
       overflow-x: auto;
-      // padding-left: 0.25em;
     }
     pre {
       padding: 0 0.25em;
@@ -98,7 +90,6 @@ article {
     }
     h1,
     h2 {
-      // font-size: $font-size+80;
       font-size: $font-size * 1.8;
       line-height: 1.2em;
       padding-bottom: 0.3em;
@@ -106,7 +97,6 @@ article {
       border-bottom: 2px solid $color-border;
     }
     h3 {
-      // font-size: $font-size+40;
       font-size: $font-size * 1.4;
       line-height: 1em;
       margin-top: 1.3em;
@@ -114,7 +104,6 @@ article {
     h4,
     h5,
     h6 {
-      // font-size: $font-size+40;
       font-size: $font-size * 1.4;
     }
     h1,
@@ -124,8 +113,6 @@ article {
     h4,
     h5,
     h6 {
-      // color: $color-heading;
-      // font-smoothing: antialiased
       & > code {
         color: darken($color-gray, 20%);
       }
@@ -170,15 +157,12 @@ article {
     ol {
       padding-left: 1.5em;
       font-size: $font-size;
-      padding-top: 0.7em;
       @media ($mini) {
         padding-left: 1.5em;
       }
     }
     ul li {
       list-style: disc;
-      // text-align: -webkit-match-parent;
-      // text-align: match-parent;
     }
     ol li {
       list-style-type: decimal;
