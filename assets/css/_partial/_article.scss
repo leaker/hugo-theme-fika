@@ -179,13 +179,12 @@ article {
     table td > code {
       font-family: $font-mono;
       background: $color-code;
-      color: #d14;
+      color: #9cdcff;
       border: 1px solid darken($color-code, 10%);
       padding: 0 5px;
       margin: 0 2px;
       font-size: 90%;
       white-space: nowrap;
-      text-shadow: 0 1px #fff;
       -webkit-border-radius: 0.25em;
       border-radius: 0.25em;
     }
