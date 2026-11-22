@@ -88,8 +88,17 @@
         text-wrap: balance;
       }
 
+      h4 {
+        font-size: 1.2em;
+      }
+
+      :is(h5, h6) {
+        font-size: 1.05em;
+      }
+
       :is(h4, h5, h6) {
-        font-size: 1.4em;
+        margin-block-start: 1.2em;
+        font-weight: bold;
       }
 
       hr {
@@ -117,7 +126,6 @@
         padding-inline-start: 1%;
         border-inline-start: 0.2em solid var(--color-theme);
         color: var(--color-meta);
-        font-size: 0.875rem;
         line-height: var(--line-height);
         text-wrap: pretty;
 
@@ -137,7 +145,6 @@
 
       :is(ul, ol) {
         padding-inline-start: 1.5em;
-        font-size: 0.875rem;
       }
 
       ul li {
@@ -241,7 +248,7 @@
         border-spacing: 0;
         background-color: #1e1e1e;
         font-family: var(--font-mono);
-        font-size: 0.8125rem;
+        font-size: 0.93em;
 
         th {
           padding: 0.5em;
@@ -443,7 +450,7 @@
 
     strong {
       padding: 0.4em;
-      font-size: 0.9375rem;
+      font-size: 1em;
     }
 
     ul li {
@@ -458,7 +465,7 @@
   }
 
   #toc {
-    font-size: 0.8em;
+    font-size: 0.88em;
     line-height: 1.3em;
 
     ol {

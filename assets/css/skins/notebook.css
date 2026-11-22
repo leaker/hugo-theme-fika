@@ -24,7 +24,6 @@
       linear-gradient(var(--paper-line) 1px, transparent 1px),
       linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
     background-size: 28px 28px;
-    font-size: 1rem;
     line-height: 1.6;
   }
 
@@ -120,6 +119,7 @@
     }
 
     pre {
+      font-size: 0.9em;
       padding: 0.9em 1.1em;
       border: 2px solid var(--color-border);
       border-radius: var(--radius);
