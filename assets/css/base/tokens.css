@@ -21,18 +21,20 @@
     --font-sans: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
     --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
 
-    /* Scale (1.2) */
-    --text-xs: 0.8125rem;
-    --text-sm: 0.875rem;
-    --text-md: 1rem;
-    --text-lg: 1.125rem;
-    --text-xl: 1.25rem;
-    --text-2xl: 1.5rem;
+    /* Type scale: rem-based and fluid; each step grows at most 12.5% between 1280px and 1920px wide */
+    --text-xs: clamp(0.8125rem, 0.609rem + 0.254vw, 0.914rem);
+    --text-sm: clamp(0.875rem, 0.656rem + 0.273vw, 0.984rem);
+    --text-md: clamp(1rem, 0.75rem + 0.3125vw, 1.125rem);
+    --text-lg: clamp(1.125rem, 0.844rem + 0.352vw, 1.266rem);
+    --text-xl: clamp(1.25rem, 0.9375rem + 0.391vw, 1.406rem);
+    --text-2xl: clamp(1.5rem, 1.125rem + 0.469vw, 1.6875rem);
+    --text-3xl: clamp(1.75rem, 1.25rem + 1.2vw, 2.375rem);
+    --text-4xl: clamp(1.875rem, 1.3rem + 1.7vw, 2.875rem);
 
     /* Layout */
-    --page-max: 72rem;
+    --page-max: clamp(72rem, 50rem + 30vw, 100rem);
     --gutter: clamp(1rem, 4vw, 1.5rem);
-    --measure: 46rem;
+    --measure: clamp(46rem, 30rem + 18vw, 60rem);
     --radius: 8px;
     --radius-sm: 6px;
 
