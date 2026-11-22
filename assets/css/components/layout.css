@@ -52,6 +52,7 @@
   }
 
   article.post-expand {
+    overflow: clip;
     margin-block-end: 3.5em;
   }
 
