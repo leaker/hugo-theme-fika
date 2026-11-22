@@ -54,6 +54,7 @@
       }
 
       pre {
+        margin-block-start: 1em;
         padding: 0 0.25em;
         border-radius: var(--radius);
         background-color: var(--color-canvas-inset) !important;
@@ -144,7 +145,12 @@
       }
 
       :is(ul, ol) {
+        margin-block-start: 0.9em;
         padding-inline-start: 1.5em;
+      }
+
+      li > :is(ul, ol) {
+        margin-block-start: 0.3em;
       }
 
       ul li {
