@@ -1,120 +1,96 @@
 @layer components {
   body > header {
-    inline-size: 100%;
-    padding-block: 1em 0.8em;
-    background: var(--color-theme);
-    box-shadow: 2px 4px 5px hsl(0 1% 1% / 0.2);
-    color: var(--color-white);
-
-    @media (width >= 1024px) {
-      padding-block: 1.8em 1.5em;
-    }
+    border-block-end: 1px solid var(--color-border);
+    background: var(--color-bg);
 
     > div {
       display: flex;
       flex-wrap: wrap;
-      align-items: flex-start;
-      inline-size: 95%;
+      align-items: center;
+      column-gap: 0.875rem;
+      row-gap: 0.5rem;
+      inline-size: min(100% - 2 * var(--gutter), var(--page-max));
       margin-inline: auto;
-
-      @media (width >= 1024px) {
-        inline-size: 93%;
-      }
-    }
-
-    a {
-      display: block;
-      color: var(--color-white);
+      padding-block: 1rem;
     }
   }
 
   #imglogo {
-    --logo-size: 4em;
+    flex: none;
 
-    inline-size: var(--logo-size);
-    block-size: var(--logo-size);
-
-    @media (width >= 768px) {
-      --logo-size: 5em;
-    }
-
-    @media (width >= 1024px) {
-      --logo-size: 5.5em;
+    a {
+      display: block;
     }
 
     img {
-      inline-size: var(--logo-size);
-      block-size: auto;
+      display: block;
+      inline-size: 2.75rem;
+      block-size: 2.75rem;
+      border-radius: 50%;
+      object-fit: cover;
     }
   }
 
   #textlogo {
-    margin-inline-start: 0.5em;
-    white-space: nowrap;
+    min-inline-size: 0;
 
     h1.site-name {
-      inline-size: 86%;
-      font-family: var(--font-custom);
-      font-size: 1.75rem;
-      line-height: var(--line-height);
+      font-size: clamp(1.125rem, 1rem + 0.6vw, 1.375rem);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      line-height: 1.3;
 
-      @media (width >= 768px) {
-        font-size: 2.1rem;
-      }
-
-      @media (width >= 1024px) {
-        font-size: 2.45rem;
+      a {
+        color: var(--color-strong);
       }
     }
 
     h2.blog-motto {
-      font-size: 0.6125rem;
-      font-weight: normal;
-      color: var(--color-fg-muted);
-
-      @media (width >= 768px) {
-        font-size: 0.875rem;
-      }
-
-      @media (width >= 1024px) {
-        font-size: 0.9625rem;
-      }
+      margin-block-start: 0.125rem;
+      color: var(--color-muted);
+      font-size: var(--text-xs);
+      font-weight: 400;
+      line-height: 1.4;
     }
   }
 
   header nav {
     flex: 1 0 100%;
-    padding-block-start: 0.5em;
-    font-size: 1.125em;
+    margin-inline: -0.75rem;
 
-    @media (width >= 1024px) {
+    @media (width >= 768px) {
       flex: 0 0 auto;
-      margin-inline-start: auto;
-      margin-block-start: 2.8em;
+      margin-inline: auto -0.75rem;
     }
 
     ul {
       display: flex;
-
-      @media (width >= 1024px) {
-        justify-content: flex-end;
-      }
     }
 
-    ul li a {
-      padding: 0.2em 0 0.2em 1em;
-      color: var(--color-blue);
-      font-size: 1.4em;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-
-      @media (width >= 1024px) {
-        padding: 0.2em 1.5em;
-        font-size: 1.52em;
-      }
+    a {
+      position: relative;
+      display: block;
+      padding: 0.5rem 0.75rem;
+      color: var(--color-muted);
+      font-size: var(--text-md);
+      font-weight: 500;
 
       &:hover {
-        color: var(--color-orange);
+        color: var(--color-strong);
+      }
+
+      &[aria-current="page"] {
+        color: var(--color-strong);
+
+        &::after {
+          content: "";
+          position: absolute;
+          inset-inline: 0.75rem;
+          inset-block-end: 0;
+          block-size: 2px;
+          border-radius: 2px;
+          background: var(--color-accent);
+        }
       }
     }
   }

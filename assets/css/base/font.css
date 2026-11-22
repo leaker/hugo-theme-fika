@@ -1,8 +1,0 @@
-/* The only web font: used by the site title and footer text. woff2 only (all current browsers). */
-@font-face {
-  font-family: "Just Another Hand";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("https://cdn.jsdelivr.net/npm/font-just-another-hand/fonts/just-another-hand-v7-latin-regular.woff2") format("woff2");
-}

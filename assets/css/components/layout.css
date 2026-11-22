@@ -1,73 +1,54 @@
 @layer components {
   #container {
     flex: 1;
-    inline-size: 96%;
+    inline-size: min(100% - 2 * var(--gutter), var(--page-max));
     margin-inline: auto;
-    overflow-x: clip;
+    padding-block: 2rem 3rem;
 
     @media (width >= 1024px) {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 294px;
-      column-gap: 14px;
+      grid-template-columns: minmax(0, 1fr) 16.5rem;
+      column-gap: 4rem;
       align-items: start;
-    }
-
-    @media (width >= 1560px) {
-      inline-size: 82%;
+      padding-block-start: 3rem;
     }
   }
 
   #main {
     min-inline-size: 0;
-    margin-block-start: 1em;
-    line-height: 1.8;
 
-    @media (width >= 1024px) {
-      margin-block-start: 2em;
-    }
-
-    /* Long pages (the home page renders full articles): skip rendering work for articles below the fold. */
+    /* Home page renders full articles: skip rendering work for those below the fold. */
     article.post-expand:not(:first-of-type) {
       content-visibility: auto;
       contain-intrinsic-size: auto 150rem;
     }
   }
 
-  /* Links in post areas. :where() keeps the context at zero specificity so components can override it. */
-  :where(.post, .page, .link, .photo) a {
-    color: var(--color-blue);
-
-    &:hover {
-      color: var(--color-orange);
-    }
-  }
-
-  /* Boxes */
-  article.post-expand,
-  aside,
-  #page-nav,
-  .tagslist ul li a {
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-  }
-
   article.post-expand {
-    margin-block-end: 3.5em;
+    padding-block-end: 3rem;
+    margin-block-end: 3rem;
+    border-block-end: 1px solid var(--color-border);
+
+    &:last-of-type {
+      margin-block-end: 2rem;
+    }
   }
 
   #page-nav {
     display: flex;
     align-items: center;
-    overflow: hidden;
+    gap: 0.5rem;
 
     a {
       display: inline-block;
-      padding: 0.5em 1em;
-      color: var(--color-blue);
+      padding: 0.4375rem 0.75rem;
+      border-radius: var(--radius-sm);
+      color: var(--color-muted);
+      font-size: var(--text-sm);
 
       &:hover {
-        background: var(--color-gray);
-        color: var(--color-theme);
+        background: var(--color-surface-2);
+        color: var(--color-strong);
       }
     }
 
@@ -76,36 +57,45 @@
       text-align: center;
     }
 
+    :is(.first, .prev, .next, .last) span::before {
+      inline-size: 0.875em;
+      block-size: 0.875em;
+    }
+
     .first span::before {
       --icon: var(--icon-chevrons-left);
-      margin-inline-end: 0.5em;
+      margin-inline-end: 0.375em;
     }
 
     .prev span::before {
       --icon: var(--icon-chevron-left);
-      margin-inline-end: 0.5em;
+      margin-inline-end: 0.375em;
     }
 
     .next span::before {
       --icon: var(--icon-chevron-right);
-      margin-inline-start: 0.5em;
+      margin-inline-start: 0.375em;
     }
 
     .last span::before {
       --icon: var(--icon-chevrons-right);
-      margin-inline-start: 0.5em;
+      margin-inline-start: 0.375em;
     }
 
     .page-number {
       display: none;
+      min-inline-size: 2.25rem;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
 
       @media (width >= 768px) {
         display: inline-block;
       }
 
       &.current {
-        color: var(--color-orange);
-        font-weight: bold;
+        background: var(--color-surface-2);
+        color: var(--color-strong);
+        font-weight: 600;
       }
     }
   }
