@@ -33,6 +33,10 @@
     background: var(--color-surface);
     box-shadow: 0 1px 0 rgb(255 255 255 / 0.03) inset;
 
+    &:hover {
+      border-color: var(--color-border-strong);
+    }
+
     header.article-info > h1 {
       padding-inline-start: 0.875rem;
       border-inline-start: 4px solid var(--color-accent);

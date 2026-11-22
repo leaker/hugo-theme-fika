@@ -3,6 +3,20 @@
     display: grid;
     row-gap: 0.625rem;
 
+    > h1 a {
+      display: inline-block;
+      color: var(--color-strong);
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.2em;
+
+      &:hover {
+        color: var(--color-accent-hover);
+        text-decoration-color: currentColor;
+      }
+    }
+
     > h1 {
       color: var(--color-strong);
       font-size: clamp(1.625rem, 1.25rem + 1.4vw, 2.125rem);
