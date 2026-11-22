@@ -7,6 +7,16 @@
     }
   }
 
+  @media (width >= 1024px) {
+    #asidepart.has-toc {
+      align-self: stretch;
+
+      > :not(.toc-aside) {
+        display: none;
+      }
+    }
+  }
+
   aside {
     margin-block-end: 2rem;
   }
