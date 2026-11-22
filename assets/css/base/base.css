@@ -3,6 +3,23 @@
     scrollbar-color: var(--color-border-strong) transparent;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+
+    /* Large displays: scale the whole rem-based layout instead of leaving wide empty margins */
+    @media (width >= 1800px) {
+      font-size: 112.5%;
+    }
+
+    @media (width >= 2200px) {
+      font-size: 125%;
+    }
+
+    @media (width >= 2800px) {
+      font-size: 150%;
+    }
+
+    @media (width >= 3400px) {
+      font-size: 175%;
+    }
   }
 
   body {
