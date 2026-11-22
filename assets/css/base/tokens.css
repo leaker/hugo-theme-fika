@@ -32,7 +32,7 @@
     --text-4xl: clamp(1.875rem, 1.3rem + 1.7vw, 2.875rem);
 
     /* Layout */
-    --page-max: clamp(72rem, 50rem + 30vw, 100rem);
+    --page-max: clamp(72rem, 40rem + 45vw, 120rem);
     --gutter: clamp(1rem, 4vw, 1.5rem);
     --measure: clamp(46rem, 30rem + 18vw, 60rem);
     --radius: 8px;

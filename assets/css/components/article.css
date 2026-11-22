@@ -40,7 +40,6 @@
   }
 
   .article-content {
-    max-inline-size: var(--measure);
     padding-block-start: 1.5rem;
     color: var(--color-text);
     line-height: 1.85;
@@ -52,6 +51,11 @@
     > p:first-child,
     > .toc-article:first-child {
       margin-block-start: 0;
+    }
+
+    /* Reading text keeps a comfortable line length; code, tables and media use the whole column */
+    > :is(p, ul, ol, dl, blockquote, hr, h1, h2, h3, h4, h5, h6) {
+      max-inline-size: var(--measure);
     }
 
     :is(h1, h2, h3, h4, h5, h6) {
@@ -460,6 +464,55 @@
 
       &:hover {
         color: var(--color-accent);
+      }
+    }
+  }
+
+  .article-content .toc-inline {
+    max-inline-size: var(--measure);
+
+    @media (width >= 1024px) {
+      display: none;
+    }
+  }
+
+  /* Table of contents in the sidebar (wide screens) */
+  .toc-aside {
+    display: none;
+    font-size: var(--text-sm);
+    line-height: 1.5;
+
+    @media (width >= 1024px) {
+      display: block;
+      position: sticky;
+      inset-block-start: 1.5rem;
+      max-block-size: calc(100dvh - 3rem);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    nav ul {
+      padding-inline-start: 0;
+    }
+
+    nav ul ul {
+      padding-inline-start: 0.875rem;
+    }
+
+    nav li {
+      list-style: none;
+    }
+
+    nav a {
+      display: block;
+      padding-block: 0.3125rem;
+      padding-inline-start: 0.75rem;
+      border-inline-start: 2px solid var(--color-border);
+      color: var(--color-muted);
+
+      &:hover {
+        border-inline-start-color: var(--color-accent);
+        color: var(--color-strong);
       }
     }
   }
