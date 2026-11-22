@@ -19,6 +19,7 @@
     <a class="extend prev" aria-label="Prev" rel="prev" role="button" href="{{ .URL }}"><span></span>上一页</a>
     {{- end }}
 
+    <div class="page-list">
     {{- if lt .First.PageNumber $start }}
       <span>...</span>
     {{- end }}
@@ -34,16 +35,16 @@
     {{- if gt .Last.PageNumber $end }}
       <span>...</span>
     {{- end }}
+    </div>
 
+    {{- with .Next }}
+      <a class="extend next" aria-label="Next" rel="next" role="button" href="{{ .URL }}">下一页<span></span></a>
+    {{- end }}
 
     {{- with .Last }}
       {{- if ne $currentPageNumber .PageNumber }}
       <a class="extend last" aria-label="Last" rel="last" role="button" href="{{ .URL }}">尾页<span></span></a>
       {{- end }}
-    {{- end }}
-
-    {{- with .Next }}
-      <a class="extend next" aria-label="Next" rel="next" role="button" href="{{ .URL }}">下一页<span></span></a>
     {{- end }}
   {{- end }}
 </nav>

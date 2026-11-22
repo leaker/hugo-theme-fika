@@ -1,0 +1,60 @@
+@layer reset, base, components, utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+
+    /* Colors */
+    --color-theme: #161b22;
+    --color-background: #0d1117;
+    --color-font: #c9d1d9;
+    --color-white: #fff;
+    --color-blue: #58a6ff;
+    --color-orange: #ea6753;
+    --color-section: #fafafa;
+    --color-footer: var(--color-theme);
+    --color-gray: #676767;
+    --color-gray-light: #9a9a9a;
+    --color-gray-lighter: #b3b3b3;
+    --color-meta: #808080;
+    --color-code: #1f2428;
+    --color-code-border: #090a0b;
+    --color-code-text: #9cdcff;
+    --color-border: #30363d;
+    --color-border-muted: #21262d;
+    --color-subtle: #161b22;
+    --color-fg-default: #58a6ff;
+    --color-fg-muted: #8b949e;
+    --color-canvas-inset: #010409;
+    --color-primer: #f78166;
+
+    --color-btn-text: #c9d1d9;
+    --color-btn-bg: #21262d;
+    --color-btn-border: rgb(240 246 252 / 0.1);
+    --color-btn-hover-bg: #30363d;
+    --color-btn-hover-border: #8b949e;
+
+    /* Breakpoints are written inline in @media (custom properties can't be used there):
+       568px phone, 768px mini, 1024px tablet, 1560px desktop */
+
+    /* Fonts */
+    --font-default: "Helvetica Neue", Helvetica, "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, system-ui, sans-serif;
+    --font-serif: Georgia, serif;
+    --font-mono: Monaco, Menlo, Consolas, "Courier New", ui-monospace, monospace;
+    --font-custom: "Just Another Hand", serif;
+    --line-height: 1.5;
+    --radius: 6px;
+
+    /* Icons: stroke SVGs rendered through mask-image so they follow currentColor */
+    --icon-chevron-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E");
+    --icon-chevron-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+    --icon-chevrons-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m11 17-5-5 5-5M18 17l-5-5 5-5'/%3E%3C/svg%3E");
+    --icon-chevrons-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 17 5-5-5-5M13 17l5-5-5-5'/%3E%3C/svg%3E");
+    --icon-folder: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z'/%3E%3C/svg%3E");
+    --icon-tag: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z'/%3E%3Ccircle cx='7.5' cy='7.5' r='.5' fill='%23000'/%3E%3C/svg%3E");
+    --icon-clock: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 6v6l4 2'/%3E%3C/svg%3E");
+    --icon-rss: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16'/%3E%3Ccircle cx='5' cy='19' r='1'/%3E%3C/svg%3E");
+    --icon-mail: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='20' height='16' x='2' y='4' rx='2'/%3E%3Cpath d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/%3E%3C/svg%3E");
+    --icon-pencil: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z'/%3E%3Cpath d='m15 5 4 4'/%3E%3C/svg%3E");
+  }
+}

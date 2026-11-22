@@ -1,0 +1,153 @@
+@layer components {
+  footer {
+    margin-block-start: 1em;
+    padding: 0 2% 0.5em;
+    background: var(--color-footer);
+  }
+
+  #footer {
+    display: grid;
+    align-items: start;
+    inline-size: 95%;
+    margin-inline: auto;
+
+    @media (width >= 768px) {
+      grid-template-columns: 10em minmax(0, 1fr) 13em;
+      grid-template-areas:
+        "line info social"
+        "copyright copyright copyright";
+    }
+
+    @media (width >= 768px) {
+      .line {
+        grid-area: line;
+      }
+
+      .info {
+        grid-area: info;
+      }
+
+      .social-font {
+        grid-area: social;
+      }
+
+      .copyright {
+        grid-area: copyright;
+      }
+    }
+
+    .line {
+      block-size: 10em;
+    }
+  }
+
+  .author {
+    --size: 6.25em;
+
+    inline-size: var(--size);
+    block-size: var(--size);
+    margin: 0 auto;
+    border-radius: 50%;
+    background: url("/img/author.webp") no-repeat left top / var(--size) var(--size);
+
+    @media (width >= 768px) {
+      margin: 2em 0 0;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform 2s ease-out;
+
+      &:hover {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .info {
+    inline-size: 90%;
+    margin: 0 auto;
+    color: var(--color-white);
+    font-family: var(--font-custom);
+    font-size: 200%;
+    line-height: 1.4;
+    opacity: 0.7;
+
+    @media (width >= 768px) {
+      margin: 1.5em 0 0;
+      inline-size: auto;
+    }
+  }
+
+  .social-font {
+    padding-inline-start: 3%;
+
+    @media (width >= 568px) {
+      padding-inline-start: 20%;
+    }
+
+    @media (width >= 768px) {
+      align-self: start;
+      margin-block-start: 3em;
+      padding-inline-start: 0;
+    }
+
+    a {
+      display: inline-block;
+      padding: 0.5em;
+      color: var(--color-white);
+      font-size: 1.85em;
+      line-height: 1;
+
+      @media (width >= 1024px) {
+        padding: 0.3em;
+      }
+
+      &:hover::before {
+        color: var(--color-blue);
+      }
+    }
+  }
+
+  .icon-email::before {
+    --icon: var(--icon-mail);
+  }
+
+  .copyright {
+    color: var(--color-white);
+    font-family: var(--font-default);
+    font-size: 0.8em;
+    opacity: 0.7;
+    text-align: center;
+
+    a {
+      color: var(--color-blue);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    a.report-link {
+      display: inline-block;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .report-img {
+      display: inline-block;
+      block-size: 20px;
+      margin-block-end: 2px;
+      margin-inline: 1em 12px;
+      vertical-align: middle;
+    }
+
+    .report-link-text {
+      block-size: 20px;
+      margin-inline-start: -7px;
+      color: #939393;
+      line-height: 20px;
+    }
+  }
+}
