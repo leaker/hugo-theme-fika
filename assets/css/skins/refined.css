@@ -1,0 +1,125 @@
+/* Skin: refined — the original dark look with firmer panels, calmer type and visible hover states */
+@layer skin {
+  :root {
+    --color-background: #0b0e14;
+    --color-theme: #121722;
+    --color-subtle: #171d29;
+    --color-border: #2a3341;
+    --color-border-muted: #1f2733;
+    --color-blue: #5aa9ff;
+    --color-fg-default: #5aa9ff;
+    --color-orange: #9fd0ff;
+    --radius: 10px;
+  }
+
+  body {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  body > header {
+    border-block-end: 1px solid var(--color-border);
+    box-shadow: none;
+  }
+
+  header nav ul li a {
+    border-block-end: 2px solid transparent;
+    padding-block: 0.15em;
+
+    &:hover {
+      border-block-end-color: var(--color-blue);
+      color: var(--color-blue);
+    }
+  }
+
+  article.post-expand,
+  aside {
+    background: #10151e;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 0.04) inset, 0 8px 24px rgb(0 0 0 / 0.25);
+  }
+
+  article.post-expand {
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-color: #3a4658;
+    }
+  }
+
+  article header.article-info {
+    background: linear-gradient(180deg, #151b27, transparent);
+    border-start-start-radius: var(--radius);
+    border-start-end-radius: var(--radius);
+
+    > h1 {
+      text-wrap: balance;
+
+      a {
+        background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat;
+        transition: background-size 0.25s, color 0.2s;
+
+        &:hover {
+          background-size: 100% 2px;
+          color: var(--color-orange);
+        }
+      }
+    }
+  }
+
+  .article-content {
+    font-size: 1.0625rem;
+    line-height: 1.85;
+    padding-block: 1.75em;
+
+    p {
+      margin-block-start: 1.05em;
+    }
+
+    :is(h1, h2) {
+      border-block-end-width: 1px;
+      color: #f0f3f8;
+    }
+
+    strong {
+      font-family: inherit;
+      font-weight: 650;
+    }
+
+    em {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    pre {
+      padding: 0.9em 1.1em;
+      border: 1px solid var(--color-border);
+    }
+
+    a:not(.btn) {
+      text-decoration: underline;
+      text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+      text-underline-offset: 0.2em;
+    }
+  }
+
+  .article-category-link,
+  .article-tags a,
+  .tagslist ul li a {
+    border-radius: 999px;
+  }
+
+  .asidetitle {
+    background: #151b27;
+    letter-spacing: 0.02em;
+  }
+
+  .categorieslist li a:hover,
+  .tagslist ul li a:hover {
+    color: var(--color-blue);
+  }
+
+  .article-nav a {
+    padding: 0.5em 0.75em;
+    border-radius: 6px;
+  }
+}

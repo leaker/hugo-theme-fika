@@ -1,71 +1,73 @@
 @layer components {
   #container {
     flex: 1;
-    inline-size: min(100% - 2 * var(--gutter), var(--page-max));
+    inline-size: 96%;
     margin-inline: auto;
-    padding-block: 2rem 3rem;
+    overflow-x: clip;
 
     @media (width >= 1024px) {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 16.5rem;
-      column-gap: 4rem;
+      grid-template-columns: minmax(0, 1fr) 294px;
+      column-gap: 14px;
       align-items: start;
-      padding-block-start: 3rem;
+    }
+
+    @media (width >= 1560px) {
+      inline-size: 82%;
     }
   }
 
   #main {
     min-inline-size: 0;
+    margin-block-start: 1em;
+    line-height: 1.8;
 
-    /* Home page renders full articles: skip rendering work for those below the fold. */
+    @media (width >= 1024px) {
+      margin-block-start: 2em;
+    }
+
+    /* Long pages (the home page renders full articles): skip rendering work for articles below the fold. */
     article.post-expand:not(:first-of-type) {
       content-visibility: auto;
       contain-intrinsic-size: auto 150rem;
     }
   }
 
-  /* List pages (several articles): each article is its own panel so the start of one is obvious */
-  #main:not(.post) article.post-expand {
-    margin-block-end: 2rem;
-    padding: clamp(1.25rem, 3vw, 2rem);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    background: var(--color-surface);
-    box-shadow: 0 1px 0 rgb(255 255 255 / 0.03) inset;
+  /* Links in post areas. :where() keeps the context at zero specificity so components can override it. */
+  :where(.post, .page, .link, .photo) a {
+    color: var(--color-blue);
 
     &:hover {
-      border-color: var(--color-border-strong);
+      color: var(--color-orange);
     }
+  }
 
-    header.article-info > h1 {
-      padding-inline-start: 0.875rem;
-      border-inline-start: 4px solid var(--color-accent);
-    }
+  /* Boxes */
+  article.post-expand,
+  aside,
+  #page-nav,
+  .tagslist ul li a {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+  }
 
-    pre {
-      background-color: var(--color-code-bg) !important;
-    }
-
-    .toc-article {
-      background: var(--color-surface-2);
-    }
+  article.post-expand {
+    margin-block-end: 3.5em;
   }
 
   #page-nav {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    overflow: hidden;
 
     a {
       display: inline-block;
-      padding: 0.4375rem 0.75rem;
-      border-radius: var(--radius-sm);
-      color: var(--color-muted);
-      font-size: var(--text-sm);
+      padding: 0.5em 1em;
+      color: var(--color-blue);
 
       &:hover {
-        background: var(--color-surface-2);
-        color: var(--color-strong);
+        background: var(--color-gray);
+        color: var(--color-theme);
       }
     }
 
@@ -74,45 +76,36 @@
       text-align: center;
     }
 
-    :is(.first, .prev, .next, .last) span::before {
-      inline-size: 0.875em;
-      block-size: 0.875em;
-    }
-
     .first span::before {
       --icon: var(--icon-chevrons-left);
-      margin-inline-end: 0.375em;
+      margin-inline-end: 0.5em;
     }
 
     .prev span::before {
       --icon: var(--icon-chevron-left);
-      margin-inline-end: 0.375em;
+      margin-inline-end: 0.5em;
     }
 
     .next span::before {
       --icon: var(--icon-chevron-right);
-      margin-inline-start: 0.375em;
+      margin-inline-start: 0.5em;
     }
 
     .last span::before {
       --icon: var(--icon-chevrons-right);
-      margin-inline-start: 0.375em;
+      margin-inline-start: 0.5em;
     }
 
     .page-number {
       display: none;
-      min-inline-size: 2.25rem;
-      text-align: center;
-      font-variant-numeric: tabular-nums;
 
       @media (width >= 768px) {
         display: inline-block;
       }
 
       &.current {
-        background: var(--color-surface-2);
-        color: var(--color-strong);
-        font-weight: 600;
+        color: var(--color-orange);
+        font-weight: bold;
       }
     }
   }

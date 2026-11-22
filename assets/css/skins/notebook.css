@@ -1,0 +1,192 @@
+/* Skin: notebook — graph paper, hard-edged cards with offset shadows, marker-highlighted titles */
+@layer skin {
+  :root {
+    --color-background: #0e1217;
+    --color-theme: #141a22;
+    --color-subtle: #19212b;
+    --color-border: #38424f;
+    --color-border-muted: #2a3340;
+    --color-blue: #f2c14e;
+    --color-fg-default: #f2c14e;
+    --color-orange: #fff1c7;
+    --color-fg-muted: #98a3b3;
+    --color-code: #1b232d;
+    --color-code-border: #38424f;
+    --color-code-text: #ffe29a;
+    --color-primer: #ffcf6e;
+    --radius: 4px;
+    --paper-line: rgb(255 255 255 / 0.045);
+  }
+
+  body {
+    background-color: var(--color-background);
+    background-image:
+      linear-gradient(var(--paper-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
+    background-size: 28px 28px;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  body > header {
+    border-block-end: 2px dashed var(--color-border);
+    box-shadow: none;
+  }
+
+  #textlogo h1.site-name a {
+    background: linear-gradient(transparent 62%, rgb(242 193 78 / 0.35) 62%);
+  }
+
+  header nav ul li a {
+    font-weight: 700;
+
+    &:hover {
+      background: linear-gradient(transparent 60%, rgb(242 193 78 / 0.3) 60%);
+      color: var(--color-orange);
+    }
+  }
+
+  article.post-expand,
+  aside {
+    border-width: 2px;
+    background: #121820;
+    box-shadow: 6px 6px 0 #05070a;
+  }
+
+  aside {
+    box-shadow: 4px 4px 0 #05070a;
+  }
+
+  article.post-expand {
+    @media (prefers-reduced-motion: no-preference) {
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    &:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 #05070a;
+    }
+  }
+
+  article header.article-info {
+    border-block-end: 2px dashed var(--color-border);
+
+    > h1 {
+      border-inline-start: 0;
+      padding-inline: 4%;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-wrap: balance;
+
+      a {
+        background: linear-gradient(transparent 64%, rgb(242 193 78 / 0.3) 64%);
+        transition: background-size 0.2s;
+
+        &:hover {
+          background: linear-gradient(transparent 20%, rgb(242 193 78 / 0.45) 20%);
+          color: #fff;
+        }
+      }
+    }
+
+    > p.article-time {
+      color: var(--color-fg-muted);
+    }
+  }
+
+  .article-content {
+    font-size: 1.0625rem;
+    line-height: 1.85;
+    padding-block: 1.75em;
+
+    :is(h1, h2) {
+      border-block-end: 2px dashed var(--color-border);
+      color: #f4f6fa;
+    }
+
+    h3 {
+      display: inline-block;
+      background: linear-gradient(transparent 60%, rgb(242 193 78 / 0.22) 60%);
+    }
+
+    strong {
+      font-family: inherit;
+      font-weight: 700;
+    }
+
+    em {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    pre {
+      padding: 0.9em 1.1em;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius);
+    }
+
+    blockquote {
+      padding: 0.4em 1em;
+      border-inline-start: 4px solid var(--color-blue);
+      background: rgb(242 193 78 / 0.06);
+      color: #b4becc;
+    }
+
+    a:not(.btn) {
+      text-decoration: underline;
+      text-decoration-style: wavy;
+      text-decoration-thickness: 1px;
+      text-decoration-color: color-mix(in srgb, currentColor 55%, transparent);
+      text-underline-offset: 0.25em;
+    }
+  }
+
+  footer.article-footer {
+    border-block-start: 2px dashed var(--color-border);
+  }
+
+  .article-category-link,
+  .article-tags a,
+  .tagslist ul li a {
+    border: 1px dashed var(--color-border);
+    border-radius: 2px;
+  }
+
+  .asidetitle {
+    border-width: 0 0 2px;
+    border-bottom-style: dashed;
+    border-radius: 0;
+    background: transparent;
+    font-weight: 800;
+  }
+
+  .categorieslist li {
+    border-top-style: dashed;
+  }
+
+  .categorieslist li a:hover,
+  .tagslist ul li a:hover {
+    background: rgb(242 193 78 / 0.14);
+    color: var(--color-orange);
+  }
+
+  .article-nav a {
+    padding: 0.5em 0.75em;
+    border: 2px solid transparent;
+
+    &:hover {
+      border-color: var(--color-blue);
+      background: transparent;
+      color: var(--color-orange);
+    }
+  }
+
+  #page-nav {
+    border-width: 2px;
+  }
+
+  body > footer,
+  footer {
+    border-block-start: 2px dashed var(--color-border);
+  }
+}

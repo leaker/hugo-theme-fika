@@ -1,16 +1,4 @@
-{{- $toc := false }}
-{{- if .IsPage }}
-  {{- $toc = true }}
-  {{- if isset .Params "toc" }}{{ $toc = .Params.toc }}{{ end }}
-  {{- if eq .TableOfContents "<nav id=\"TableOfContents\"></nav>" }}{{ $toc = false }}{{ end }}
-{{- end }}
-<div id="asidepart"{{ if $toc }} class="has-toc"{{ end }}>
-  {{- if $toc }}
-  <aside class="toc-aside" aria-label="文章目录">
-    <p class="asidetitle">文章目录</p>
-    {{ replace .TableOfContents "id=\"TableOfContents\"" "" | safeHTML }}
-  </aside>
-  {{- end }}
+<div id="asidepart">
   <aside class="clearfix">
     <p class="asidetitle">文章分类</p>
     <div class="categorieslist">

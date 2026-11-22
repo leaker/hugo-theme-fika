@@ -1,42 +1,49 @@
-@layer reset, base, components, utilities;
+@layer reset, base, components, skin, utilities;
 
 @layer base {
   :root {
     color-scheme: dark;
 
-    /* Color: graphite-blue ink, one cool accent */
-    --color-bg: #0e1116;
-    --color-surface: #141922;
-    --color-surface-2: #1b222d;
-    --color-border: #232b37;
-    --color-border-strong: #364152;
-    --color-text: #d3d9e2;
-    --color-strong: #f2f5fa;
-    --color-muted: #8d97a8;
-    --color-accent: #62c8bb;
-    --color-accent-hover: #93e2d6;
-    --color-code-bg: #0a0d12;
+    /* Colors */
+    --color-theme: #161b22;
+    --color-background: #0d1117;
+    --color-font: #c9d1d9;
+    --color-white: #fff;
+    --color-blue: #58a6ff;
+    --color-orange: #ea6753;
+    --color-section: #fafafa;
+    --color-footer: var(--color-theme);
+    --color-gray: #676767;
+    --color-gray-light: #9a9a9a;
+    --color-gray-lighter: #b3b3b3;
+    --color-meta: #808080;
+    --color-code: #1f2428;
+    --color-code-border: #090a0b;
+    --color-code-text: #9cdcff;
+    --color-border: #30363d;
+    --color-border-muted: #21262d;
+    --color-subtle: #161b22;
+    --color-fg-default: #58a6ff;
+    --color-fg-muted: #8b949e;
+    --color-canvas-inset: #010409;
+    --color-primer: #f78166;
 
-    /* Type: system fonts only */
-    --font-sans: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
-    --font-mono: ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
+    --color-btn-text: #c9d1d9;
+    --color-btn-bg: #21262d;
+    --color-btn-border: rgb(240 246 252 / 0.1);
+    --color-btn-hover-bg: #30363d;
+    --color-btn-hover-border: #8b949e;
 
-    /* Type scale: rem-based and fluid; each step grows at most 12.5% between 1280px and 1920px wide */
-    --text-xs: clamp(0.8125rem, 0.609rem + 0.254vw, 0.914rem);
-    --text-sm: clamp(0.875rem, 0.656rem + 0.273vw, 0.984rem);
-    --text-md: clamp(1rem, 0.75rem + 0.3125vw, 1.125rem);
-    --text-lg: clamp(1.125rem, 0.844rem + 0.352vw, 1.266rem);
-    --text-xl: clamp(1.25rem, 0.9375rem + 0.391vw, 1.406rem);
-    --text-2xl: clamp(1.5rem, 1.125rem + 0.469vw, 1.6875rem);
-    --text-3xl: clamp(1.75rem, 1.25rem + 1.2vw, 2.375rem);
-    --text-4xl: clamp(1.875rem, 1.3rem + 1.7vw, 2.875rem);
+    /* Breakpoints are written inline in @media (custom properties can't be used there):
+       568px phone, 768px mini, 1024px tablet, 1560px desktop */
 
-    /* Layout */
-    --page-max: clamp(72rem, 40rem + 45vw, 120rem);
-    --gutter: clamp(1rem, 4vw, 1.5rem);
-    --measure: clamp(46rem, 30rem + 18vw, 60rem);
-    --radius: 8px;
-    --radius-sm: 6px;
+    /* Fonts */
+    --font-default: "Helvetica Neue", Helvetica, "Microsoft YaHei", "WenQuanYi Micro Hei", Arial, system-ui, sans-serif;
+    --font-serif: Georgia, serif;
+    --font-mono: Monaco, Menlo, Consolas, "Courier New", ui-monospace, monospace;
+    --font-custom: "Just Another Hand", serif;
+    --line-height: 1.5;
+    --radius: 6px;
 
     /* Icons: stroke SVGs rendered through mask-image so they follow currentColor */
     --icon-chevron-left: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E");

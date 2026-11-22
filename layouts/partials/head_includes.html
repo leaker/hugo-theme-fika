@@ -1,7 +1,15 @@
-<meta name="text-scale" content="scale">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/font-just-another-hand/fonts/just-another-hand-v7-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 {{- with resources.Get "css/fika.css" }}
   {{- with . | css.Build (dict "minify" true "externals" (slice "/img/*")) | fingerprint }}
   <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- end }}
+{{- end }}
+{{- with site.Params.skin }}
+  {{- with resources.Get (printf "css/skins/%s.css" .) }}
+  {{- with . | css.Build (dict "minify" true) | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}">
+  {{- end }}
   {{- end }}
 {{- end }}
 <link rel="icon" href="/favicon.ico" sizes="32x32">

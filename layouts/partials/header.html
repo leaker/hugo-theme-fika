@@ -11,7 +11,7 @@
       <ul>
         {{- range site.Menus.main }}
         <li>
-          <a href="{{ .URL }}"{{ if eq (strings.TrimSuffix "index.html" .URL) (strings.TrimSuffix "index.html" $.RelPermalink) }} aria-current="page"{{ end }}>{{ .Title }}</a>
+          <a href="{{ .URL }}">{{ .Title }}</a>
         </li>
         {{- end }}
       </ul>
