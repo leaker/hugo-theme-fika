@@ -1,5 +1,5 @@
-/* Skin: refined — the original dark look with firmer panels, calmer type and visible hover states */
-@layer skin {
+/* Theme refinements on top of the components: firmer panels, calmer type, visible hover states */
+@layer theme {
   :root {
     --color-background: #0b0e14;
     --color-theme: #121722;
@@ -10,7 +10,7 @@
     --color-fg-default: #5aa9ff;
     --color-orange: #9fd0ff;
     --radius: 10px;
-    --skin-title-bg: #1a2230;
+    --title-bg: #1a2230;
   }
 
   body {
@@ -47,7 +47,7 @@
   }
 
   article header.article-info {
-    background: var(--skin-title-bg);
+    background: var(--title-bg);
     border-block-end: 1px solid var(--color-border);
 
     > h1 {
@@ -109,7 +109,7 @@
   }
 
   .asidetitle {
-    background: var(--skin-title-bg);
+    background: var(--title-bg);
     letter-spacing: 0.02em;
   }
 

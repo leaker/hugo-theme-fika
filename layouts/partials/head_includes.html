@@ -5,12 +5,5 @@
   <link rel="stylesheet" href="{{ .RelPermalink }}">
   {{- end }}
 {{- end }}
-{{- with site.Params.skin }}
-  {{- with resources.Get (printf "css/skins/%s.css" .) }}
-  {{- with . | css.Build (dict "minify" true) | fingerprint }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}">
-  {{- end }}
-  {{- end }}
-{{- end }}
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
