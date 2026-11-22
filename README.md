@@ -2,10 +2,12 @@
 Fika is a Hugo theme designed for bloggers
 
 ## Installation
-### Step 1: Install Hugo with extended (Windows)
+### Step 1: Install Hugo (v0.158.0 or later)
+The theme ships plain CSS bundled with Hugo's built-in `css.Build`, so there is no Sass, Node or "extended" build to install.
 ```bash
-scoop install hugo-extended
+scoop install hugo
 ```
+Requires a browser with native CSS nesting and cascade layers (Chrome/Edge 120+, Safari 17.2+, Firefox 120+).
 ### Step 2: Create site with `yaml` configuration
 ```bash
 hugo new site quickstart -f yaml

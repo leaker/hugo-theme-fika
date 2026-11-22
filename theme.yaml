@@ -9,7 +9,7 @@ homepage: "https://github.com/leaker/hugo-theme-fika"
 tags:
   - blog
 features: []
-min_version: "0.41.0"
+min_version: "0.158.0"
 
 author:
   name: "leaker"
