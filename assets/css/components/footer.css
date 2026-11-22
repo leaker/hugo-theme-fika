@@ -11,14 +11,14 @@
     inline-size: 95%;
     margin-inline: auto;
 
-    @media (width >= 768px) {
+    @media (width >= 48em) {
       grid-template-columns: 10em minmax(0, 1fr) 13em;
       grid-template-areas:
         "line info social"
         "copyright copyright copyright";
     }
 
-    @media (width >= 768px) {
+    @media (width >= 48em) {
       .line {
         grid-area: line;
       }
@@ -50,7 +50,7 @@
     border-radius: 50%;
     background: url("/img/author.webp") no-repeat left top / var(--size) var(--size);
 
-    @media (width >= 768px) {
+    @media (width >= 48em) {
       margin: 2em 0 0;
     }
 
@@ -72,7 +72,7 @@
     line-height: 1.4;
     opacity: 0.7;
 
-    @media (width >= 768px) {
+    @media (width >= 48em) {
       margin: 1.5em 0 0;
       inline-size: auto;
     }
@@ -81,11 +81,11 @@
   .social-font {
     padding-inline-start: 3%;
 
-    @media (width >= 568px) {
+    @media (width >= 35.5em) {
       padding-inline-start: 20%;
     }
 
-    @media (width >= 768px) {
+    @media (width >= 48em) {
       align-self: start;
       margin-block-start: 3em;
       padding-inline-start: 0;
@@ -98,7 +98,7 @@
       font-size: 1.85em;
       line-height: 1;
 
-      @media (width >= 1024px) {
+      @media (width >= 64em) {
         padding: 0.3em;
       }
 
@@ -137,17 +137,16 @@
 
     .report-img {
       display: inline-block;
-      block-size: 20px;
-      margin-block-end: 2px;
-      margin-inline: 1em 12px;
+      block-size: 1.25em;
+      margin-block-end: 0.125em;
+      margin-inline: 1em 0.75em;
       vertical-align: middle;
     }
 
     .report-link-text {
-      block-size: 20px;
-      margin-inline-start: -7px;
+      margin-inline-start: -0.45em;
       color: #939393;
-      line-height: 20px;
+      line-height: 1.25;
     }
   }
 }

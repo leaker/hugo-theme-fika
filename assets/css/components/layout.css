@@ -5,14 +5,14 @@
     margin-inline: auto;
     overflow-x: clip;
 
-    @media (width >= 1024px) {
+    @media (width >= 64em) {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 294px;
-      column-gap: 14px;
+      grid-template-columns: minmax(0, 1fr) 18.375rem;
+      column-gap: 0.875rem;
       align-items: start;
     }
 
-    @media (width >= 1560px) {
+    @media (width >= 97.5em) {
       inline-size: 82%;
     }
   }
@@ -22,7 +22,7 @@
     margin-block-start: 1em;
     line-height: 1.8;
 
-    @media (width >= 1024px) {
+    @media (width >= 64em) {
       margin-block-start: 2em;
     }
 
@@ -100,7 +100,7 @@
     .page-number {
       display: none;
 
-      @media (width >= 768px) {
+      @media (width >= 48em) {
         display: inline-block;
       }
 

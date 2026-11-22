@@ -3,7 +3,7 @@
     header.article-info {
       display: grid;
 
-      @media (width >= 768px) {
+      @media (width >= 48em) {
         border-block-end: 1px solid var(--color-border);
       }
 
@@ -15,7 +15,7 @@
         overflow-wrap: break-word;
         text-wrap: balance;
 
-        @media (width >= 1024px) {
+        @media (width >= 64em) {
           padding-block-start: 0.3em;
           font-size: 2em;
         }
@@ -174,8 +174,8 @@
         table td > code,
         :is(h1, h2, h3, h4, h5, h6) > code
       ) {
-        margin: 0 2px;
-        padding: 0 5px;
+        margin: 0 0.125em;
+        padding: 0 0.3em;
         border: 1px solid var(--color-code-border);
         border-radius: 0.25em;
         background: var(--color-code);
@@ -190,7 +190,7 @@
         line-height: var(--line-height);
         text-wrap: pretty;
 
-        @media (width >= 1024px) {
+        @media (width >= 64em) {
           margin-block-start: 1em;
         }
       }
@@ -201,7 +201,7 @@
         padding-block-start: 0.5em;
         vertical-align: middle;
 
-        @media (width >= 1024px) {
+        @media (width >= 64em) {
           padding-block-start: 0.7em;
         }
       }
@@ -362,7 +362,7 @@
     flex-direction: column;
     padding-inline: 10%;
 
-    @media (width >= 768px) {
+    @media (width >= 48em) {
       flex-direction: row;
       justify-content: space-between;
       padding-inline: 1%;
@@ -387,7 +387,7 @@
     :is(.prev, .next) {
       inline-size: 100%;
 
-      @media (width >= 768px) {
+      @media (width >= 48em) {
         inline-size: 45%;
       }
 
@@ -420,7 +420,7 @@
         --icon: var(--icon-chevron-right);
       }
 
-      @media (width >= 768px) {
+      @media (width >= 48em) {
         margin-inline-start: auto;
         text-align: end;
 
